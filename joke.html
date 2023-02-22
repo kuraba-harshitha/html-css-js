@@ -1,0 +1,60 @@
+/joke generator/
+
+/*html code*/
+
+
+
+<html>
+    <head>
+        <title>Joke Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="joke.css"> 
+         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        </head>
+    <body>
+        <h1>Do You Wanna Hear Something Funny</h1>
+        <button id="button">Yes!</button><br><br><br>
+         <img src="https://th.bing.com/th/id/R.3f4af3436bc47ac0804a923c77469b50?rik=697NK4KBRgoMsg&riu=http%3a%2f%2fweknowyourdreams.com%2fimages%2fminions%2fminions-01.jpg&ehk=D2%2fvlIQ92zUoEWt%2fqnMgQKckGpLZogR%2fWP9xR6BVXU0%3d&risl=&pid=ImgRaw&r=0" width="600px;" height="500px;"> 
+         <a href="https://kidadl.com/funnies/jokes/minion-jokes-that-are-despicably-funny#:~:text=50%20Minion%20Jokes%20That%20Are%20Despicably%20Funny%201,6.Minions%20love%20bananas%20a%20whole%20bunch.%20More%20items">Code Your Own joke Generator</a><br><br>
+         <script src="joke.js"></script>
+        </body>
+</html>
+
+
+//css code
+
+body{
+    background-color:cornsilk;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+     align-items: center;
+}
+#button{
+width: 100px;
+height:30px;
+text-align:center;
+font-size:23px;
+color:white;
+background-color: brown;
+}
+
+
+//js code
+
+const button=document.getElementById("button");
+const jokeContent=document.getElementById("jokeContent");
+const joke=document.getElementById("joke");
+button.onclick = () => {
+    axios.get('https://official-joke-api.appspot.com/random_joke').then(function(response){
+        button.textContent=response.data.setup;
+        joke.textContent="";
+        setTimeout(function(){
+            joke.textContent=response.data.punchline;},10000);
+        })
+        .catch(function (error){
+            console.log(error);
+        });
+       
+    }
