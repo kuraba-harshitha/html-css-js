@@ -1,0 +1,138 @@
+/*Bag Application*/
+<HTML>
+  <head>
+      <title>Bag Application</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <style>
+          body {
+              background-image: url(https://img.freepik.com/premium-vector/3d-paper-bags-pink-background_561505-32.jpg?w=2000);
+          }
+        .dropbtn {
+background-color: #04AA6D;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+      </style>
+  </head>
+  <body>
+      <div class="main-container">
+          <h1 style="color:rgb(16, 27, 13); text-align: center; border:5px solid tomato;"><b>👜🎒  BAG APPLICATION  👛🧳</b></h1>
+          <div class="dropdown">
+            <button class="dropbtn">MENU</button>
+            <div class="dropdown-content">
+              <a href="#">home</a>
+              <a href="#">contact us</a>
+              <a href="#">emergency</a>
+            </div>
+          </div>
+      </div>
+      <h1 style="color: green;">
+      </h1>
+      <h2>STYLE BAGS</h2>
+      <p>BAGS</p>
+      <div class="tab">
+          <button class="tablinks" onclick="openBag(event, 'c')" id="defaultOpen">School bags</button>
+          <button class="tablinks" onclick="openBag(event, 'h')">Hand bags</button>
+          <button class="tablinks" onclick="openBag(event, 'ch')">college bags</button>
+      </div>
+      <div id="c" class="tabcontent">
+          <h3>A Stylish School bag</h3>
+          <img src="https://5.imimg.com/data5/GT/QM/MY-52070189/girl-school-bags-500x500.jpg" style="width:300px;height:200px;">
+          <div style="float:right;"><h3>DETAILS</h3>
+          <p>
+              Rating:4/5<br>
+              Price:1000/- Only<br>
+              Total buyers:100
+          </p></div>
+      </div>
+      <div id="h" class="tabcontent">
+          <h3>A Stylish Hand bag</h3>
+          <img src="https://images.meesho.com/images/products/106524531/bzbyz_512.jpg" style="width:300px;height:200px;">
+          <div style="float:right;"><h3>DETAILS</h3>
+          <p>
+              Rating:5/5<br>
+              Price:900/- Only<br>
+              Total buyers:90
+          </p></div>
+      </div>
+      <div id="ch" class="tabcontent">
+          <h3>A Stylish College bag</h3>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2bEDetZ-R5D0Q4W1wpU2ohEotAvbUSFGkxA&usqp=CAU" style="width:300px;height:200px;">
+          <div style="float:right;"><h3>DETAILS</h3>
+          <p>
+              Rating:3/5<br>
+              Price:500/- Only<br>
+              Total buyers:120
+          </p></div>
+      </div>
+      <script>
+          function openBag(evt, cityName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                 tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+              document.getElementById(cityName).style.display = "block";
+              evt.currentTarget.className += " active";
+              }
+              
+              // Get the element with id="defaultOpen" and click on it
+              document.getElementById("defaultOpen").click();
+      </script>
+      <p>
+      For displaying the alert message, double
+      click the "Show Alert Message" button:
+      </p>
+      <button ondblclick="myalert()">
+      Show Alert Message
+      </button>
+      <script>
+      function myalert()
+       {
+      alert("Welcome to Bag Application.\n " +
+          "It is the best online shopping store for buying bags");
+      }
+      </script>
+  </body>
+  </html>
